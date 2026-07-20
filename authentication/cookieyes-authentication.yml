@@ -1,0 +1,53 @@
+generated: '2026-07-18'
+method: searched
+source: https://app.cookieyes.com/.well-known/openid-configuration
+docs: https://app.cookieyes.com/.well-known/openid-configuration
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+  pkce: S256
+  dynamic_client_registration: true
+schemes:
+- name: OAuth2
+  type: oauth2
+  issuer: https://app.cookieyes.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.cookieyes.com/oauth2/auth
+    tokenUrl: https://app.cookieyes.com/oauth2/token
+    revocationUrl: https://app.cookieyes.com/oauth2/revoke
+    pkce_methods:
+    - S256
+    scopes:
+    - openid
+    - offline
+    - offline_access
+    - mcp:read
+    - mcp:write
+  grant_types_supported:
+  - authorization_code
+  - refresh_token
+  token_endpoint_auth_methods_supported:
+  - none
+  - client_secret_basic
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://app.cookieyes.com/.well-known/openid-configuration
+  userinfo_endpoint: https://app.cookieyes.com/userinfo
+  jwks_uri: https://app.cookieyes.com/.well-known/jwks.json
+  id_token_signing_alg_values_supported:
+  - RS256
+  subject_types_supported:
+  - public
+  - pairwise
+registration_endpoint: https://app.cookieyes.com/oauth2/register
+notes: >-
+  CookieYes runs a standards-compliant OAuth 2.0 / OpenID Connect provider on
+  app.cookieyes.com backing its hosted MCP server. Authorization-code flow with
+  mandatory PKCE (S256), refresh tokens, RFC 7591 dynamic client registration,
+  and RFC 8414 authorization-server metadata. Public clients may use
+  token_endpoint_auth_method "none". This profile is derived from the live OIDC
+  discovery document; CookieYes does not publish a separate REST OpenAPI.

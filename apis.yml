@@ -1,8 +1,17 @@
 aid: cookieyes
 name: Cookieyes
-description: 'Cookieyes is a company surfaced as a portfolio company of norwest-venture-partners, seedcamp
-  and added to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a
-  lead awaiting the enrichment pipeline.'
+description: >-
+  CookieYes is a Google-certified consent management platform (CMP) that helps
+  websites comply with privacy laws such as GDPR, CCPA/CPRA, LGPD, PIPEDA and
+  POPIA. It provides customizable cookie consent banners, an automatic cookie
+  scanner with AI-based classification, geo-targeted banner display, consent
+  logging and export, multilingual support, Google Consent Mode v2 and IAB TCF
+  v2.2 compliance, and policy generators. CookieYes ships apps and plugins for
+  WordPress, Shopify, Wix, Webflow and any HTML site, plus a client-side
+  JavaScript consent API (getCkyConsent, performBannerAction). CookieYes runs an
+  OAuth 2.0 / OpenID Connect authorization server and a hosted, OAuth-gated Model
+  Context Protocol (MCP) server for agent access. Part of Mozilor Technologies,
+  it is used by over 1.5 million websites.
 url: https://raw.githubusercontent.com/api-evangelist/cookieyes/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +20,32 @@ x-backed-by:
 - seedcamp
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.cookieyes.com/favicon.ico
 tags:
 - Company
-- Unknown
+- Consent Management
+- Privacy
+- GDPR
+- CCPA
+- Cookie Consent
+- Compliance
+- Data Protection
+- MCP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -26,3 +55,48 @@ maintainers:
 common:
 - type: Website
   url: https://cookieyes.com
+- type: DeveloperPortal
+  url: https://www.cookieyes.com/category/documentation/
+- type: Documentation
+  url: https://www.cookieyes.com/category/documentation/
+- type: APIReference
+  url: https://www.cookieyes.com/documentation/consent-banner-action-api/
+- type: GettingStarted
+  url: https://www.cookieyes.com/category/documentation/getting-started/
+- type: Support
+  url: https://www.cookieyes.com/support/
+- type: Blog
+  url: https://www.cookieyes.com/category/blog/
+- type: Pricing
+  url: https://www.cookieyes.com/pricing/
+- type: SignUp
+  url: https://app.cookieyes.com/signup
+- type: Login
+  url: https://app.cookieyes.com/login
+- type: TermsOfService
+  url: https://www.cookieyes.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://www.cookieyes.com/privacy-policy/
+- type: LLMsTxt
+  url: llms/cookieyes-llms.txt
+- type: WellKnown
+  url: well-known/cookieyes-well-known.yml
+- type: MCPServer
+  url: mcp/cookieyes-mcp.yml
+- type: Authentication
+  url: authentication/cookieyes-authentication.yml
+- type: OAuthScopes
+  url: scopes/cookieyes-scopes.yml
+- type: DomainSecurity
+  url: security/cookieyes-domain-security.yml
+- type: TrustCenter
+  url: security/cookieyes-trust-center.yml
+- type: Compliance
+  url: security/cookieyes-trust-center.yml
+- type: Conformance
+  url: conformance/cookieyes-conformance.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

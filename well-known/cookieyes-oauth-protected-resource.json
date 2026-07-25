@@ -1,0 +1,1 @@
+{"resource":"https:\/\/app.cookieyes.com\/mcp","authorization_servers":["https:\/\/app.cookieyes.com"],"bearer_methods_supported":["header"],"scopes_supported":["openid","offline","offline_access","mcp:read","mcp:write"]}

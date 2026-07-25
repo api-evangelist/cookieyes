@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  app.cookieyes.com OAuth/OIDC discovery documents + CookieYes trust center
+standards:
+- id: oauth2
+  conforms: true
+  evidence: RFC 6749 authorization-code flow advertised at app.cookieyes.com/oauth2/auth + /oauth2/token
+- id: oauth2-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported = [S256] in openid-configuration
+- id: openid-connect
+  conforms: true
+  evidence: OIDC discovery document with issuer, userinfo, jwks, id_token RS256
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with valid metadata
+- id: rfc9728-oauth-protected-resource
+  conforms: true
+  evidence: /.well-known/oauth-protected-resource + WWW-Authenticate resource_metadata on /mcp
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint = app.cookieyes.com/oauth2/register
+- id: model-context-protocol
+  conforms: true
+  evidence: hosted MCP server at app.cookieyes.com/mcp (OAuth-gated, mcp:read/mcp:write scopes)
+- id: iso-27001-2022
+  conforms: true
+  evidence: ISO/IEC 27001:2022 certified (trust center)
+- id: soc2
+  conforms: true
+  evidence: SOC 2 Type I and Type II audits completed (trust center, reports under NDA)
+- id: gdpr
+  conforms: true
+  evidence: Google-certified CMP, IAB TCF v2.2 registered framework provider, DPA published
+- id: iab-tcf-2.2
+  conforms: true
+  evidence: registered IAB TCF v2.2 framework provider (CookieYes documentation)
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: no valid /.well-known/security.txt on cookieyes.com or app.cookieyes.com
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no public REST OpenAPI to assert problem+json error semantics

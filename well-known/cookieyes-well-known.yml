@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of CookieYes hosts (cookieyes.com, app.cookieyes.com)
+hosts:
+- host: https://app.cookieyes.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: cookieyes-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: cookieyes-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: cookieyes-oauth-protected-resource.json
+  - path: /.well-known/jwks.json
+    status: 200
+  - path: /.well-known/security.txt
+    status: 200
+    note: returns the SPA HTML shell, not a valid RFC 9116 security.txt — not captured
+- host: https://www.cookieyes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  app.cookieyes.com is a fully spec-compliant OAuth 2.0 / OpenID Connect
+  authorization server (RFC 8414 + OIDC discovery) that also publishes RFC 9728
+  OAuth protected-resource metadata for its hosted MCP server. Authorization
+  code + PKCE (S256), refresh tokens, and dynamic client registration (RFC 7591)
+  are advertised. Scopes: openid, offline, offline_access, mcp:read, mcp:write.

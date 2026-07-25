@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source: https://app.cookieyes.com/.well-known/oauth-authorization-server
+docs: https://app.cookieyes.com/.well-known/openid-configuration
+schemes:
+- name: OAuth2
+  source: https://app.cookieyes.com/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.cookieyes.com/oauth2/auth
+    tokenUrl: https://app.cookieyes.com/oauth2/token
+scopes:
+- scope: openid
+  description: Request an OpenID Connect ID token (authenticate the end user).
+  flows:
+  - authorizationCode
+  sources:
+  - https://app.cookieyes.com/.well-known/oauth-authorization-server
+- scope: offline
+  description: Request offline access (issue a refresh token).
+  flows:
+  - authorizationCode
+  sources:
+  - https://app.cookieyes.com/.well-known/oauth-authorization-server
+- scope: offline_access
+  description: OIDC offline_access — retain a refresh token for use without the user present.
+  flows:
+  - authorizationCode
+  sources:
+  - https://app.cookieyes.com/.well-known/oauth-authorization-server
+- scope: mcp:read
+  description: Read access to the CookieYes hosted MCP server (app.cookieyes.com/mcp).
+  flows:
+  - authorizationCode
+  sources:
+  - https://app.cookieyes.com/.well-known/oauth-protected-resource
+- scope: mcp:write
+  description: Write access to the CookieYes hosted MCP server (app.cookieyes.com/mcp).
+  flows:
+  - authorizationCode
+  sources:
+  - https://app.cookieyes.com/.well-known/oauth-protected-resource

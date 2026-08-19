@@ -6,13 +6,10 @@ server:
   name: cookieyes
   transport: http
   url: https://app.cookieyes.com/mcp
-  description: >-
-    CookieYes hosts a remote Model Context Protocol server at
-    https://app.cookieyes.com/mcp. The endpoint is live (HTTP 401 without a
-    token) and advertises RFC 9728 protected-resource metadata via
-    WWW-Authenticate, pointing at the app.cookieyes.com OAuth 2.0 authorization
-    server. Access is OAuth-gated (Bearer, header) with the mcp:read / mcp:write
-    scopes.
+  description: CookieYes hosts a remote Model Context Protocol server at https://app.cookieyes.com/mcp.
+    The endpoint is live (HTTP 401 without a token) and advertises RFC 9728 protected-resource metadata
+    via WWW-Authenticate, pointing at the app.cookieyes.com OAuth 2.0 authorization server. Access is
+    OAuth-gated (Bearer, header) with the mcp:read / mcp:write scopes.
 auth:
   type: oauth2
   authorization_server: https://app.cookieyes.com
@@ -23,7 +20,13 @@ auth:
   - mcp:read
   - mcp:write
 tools: []
-tools_note: >-
-  The tool list is not publicly enumerable — the /mcp endpoint requires an OAuth
-  access token, so tools are not captured here (no fabrication). Confirmed
-  present and reachable; requires authorization to list.
+tools_note: The tool list is not publicly enumerable — the /mcp endpoint requires an OAuth access token,
+  so tools are not captured here (no fabrication). Confirmed present and reachable; requires authorization
+  to list.
+deployment:
+  mode: remote
+  endpoint: https://app.cookieyes.com/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census

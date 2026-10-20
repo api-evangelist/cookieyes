@@ -1,10 +1,20 @@
-generated: '2026-10-15'
+generated: '2026-10-20'
 method: searched
+source:
+- shopify/integrations/shopify-integration-edges.yml
+- https://zapier.com/apps/cookieyes/integrations
+- https://n8n.io/integrations/cookieyes/
+- https://composio.dev/toolkits/cookieyes
+- https://monid.ai/tools/cookieyes
 checked:
 - shopify/integrations/shopify-integration-edges.yml
 - wordpress/integrations/wordpress-integration-edges.yml
-source:
-- shopify/integrations/shopify-integration-edges.yml
+- https://composio.dev/toolkits/cookieyes
+- https://monid.ai/tools/cookieyes
+- https://n8n.io/integrations/cookieyes/
+- https://zapier.com/apps/cookieyes/integrations
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: Shopify (own)
   partner: shopify
@@ -41,3 +51,4 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: WordPress plugin
+templates: []

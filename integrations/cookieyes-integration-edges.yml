@@ -13,6 +13,7 @@ checked:
 - https://monid.ai/tools/cookieyes
 - https://n8n.io/integrations/cookieyes/
 - https://zapier.com/apps/cookieyes/integrations
+- wix/integrations/wix-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
@@ -51,4 +52,23 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: WordPress plugin
+- partner_name: Wix (own)
+  partner: wix
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.wix.com/app-market/developer/cookieyes-limited
+  mirror_of: wix/integrations/wix-integration-edges.yml
+  apps:
+  - CookieYes GDPR Cookie Banner
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Privacy & Security
+  publisher_verified:
+  - Verified by Wix
 templates: []
